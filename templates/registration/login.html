@@ -1,0 +1,24 @@
+{% extends 'base/index.html' %}
+
+{% block main %}
+    <div class="center-flex flex-column">
+        <form class="login-form" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="group">
+                <label for="username">Username</label>
+                <input type="text" id="username"  placeholder="username" name="username">
+            </div>
+            <div class="group">
+                <label for="password">Password</label>
+                <input type="password" id="password"  placeholder="password" name="password">
+            </div>
+            <div class="group">
+                <button class="login-button" type="submit">login</button>
+            </div>
+        </form>
+        <p class="mt-20">
+            Don't  have an account ? <a href="{% url 'register' %}">Register</a>
+        </p>
+    </div>
+
+{% endblock main %}

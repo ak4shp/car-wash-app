@@ -1,0 +1,21 @@
+{% block navbar %}
+    <nav class="navbar">
+        <div class="menu">
+            <a class="item logo first" href="/">CarWash.app</a>
+        </div>
+        <div class="user-section">
+
+            <form class="item search-bar" method="GET" action="{% url 'search' %}">
+                <input type="text" placeholder="enter place..." name="place" value="{% if search %}{{search}}{% endif %}"">
+                <button class="button" type="submit">search</button>
+            </form>
+
+            {% if request.user.is_authenticated %}
+                <a class="item last" href="{% url 'logout' %}">logout</a>
+            {% else %}
+                <a class="item" href="{% url 'login' %}">login</a>
+                <a class="item last" href="{% url 'register' %}">register</a>
+            {% endif %}
+        </div>
+    </nav>
+{% endblock navbar %}

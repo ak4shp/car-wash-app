@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* background: #2d3d41; */
+  background: #abd2db;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+h3 {
+  line-height: 2rem;
+}
+
+.navbar {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+}
+.navbar a.item {
+  margin-inline: 5px;
+  text-decoration: none;
+}
+.navbar a.item.first {
+  margin-left: 0;
+}
+.navbar a.item.last {
+  margin-right: 0;
+}
+.navbar a.logo {
+  display: block;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+.navbar .user-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  line-height: 2rem;
+}
+.navbar .user-section .search-bar {
+  margin-right: 50px;
+}
+
+form.search-bar {
+  text-align: center;
+  line-height: 2rem;
+}
+form.search-bar input {
+  padding: 5px;
+}
+form.search-bar button {
+  padding: 5px;
+}
+
+.login-form, .form {
+  max-width: 350px;
+  margin-top: 50px;
+}
+.login-form .group, .form .group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.login-form .group *, .form .group * {
+  margin-top: 5px;
+}
+.login-form input, .form input {
+  padding: 10px;
+}
+.login-form .login-button, .form .login-button {
+  padding: 10px;
+}
+
+.logout {
+  margin-top: 50px;
+}
+
+.register-form {
+  margin-top: 50px;
+  max-width: 350px;
+}
+.register-form .control-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.register-form .control-group .control-label input, .register-form .control-group .controls input {
+  padding: 5px;
+}
+.register-form .control-group .help-block, .register-form .control-group .help-block + ul {
+  padding-left: 20px;
+  font-size: 12px;
+}
+.register-form button {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.service-form label {
+  margin: 10px;
+}
+.service-form button {
+  align-self: center;
+}
+
+main.main {
+  min-height: 70vh;
+  padding: 0;
+}
+
+footer.footer {
+  text-align: center;
+  margin: 20px;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  align-items: center;
+  flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.username {
+  text-transform: capitalize;
+}
+
+.booking-list {
+  margin-top: 50px;
+}
+
+table {
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 1rem;
+}
+table th {
+  background: #6da5ff;
+  font-weight: 600;
+}
+table tr {
+  padding: 0;
+}
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,21 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "base/head.html" %}
+    </head>
+    <body>
+        {% block navbar %}
+            {% include 'base/navbar.html' %}
+        {% endblock navbar %}
+
+        <main class="main">
+            {% block main %}{% endblock main %}
+        </main>
+    </body>
+
+    <footer class="footer">
+        Copyright: CarWashApp 2022 and Aakash Patel
+    </footer>
+</html>

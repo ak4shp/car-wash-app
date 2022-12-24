@@ -1,0 +1,20 @@
+{% extends 'base/index.html' %}
+
+{% block main %}
+    <div class="booking-list center-flex flex-column">
+        <h3>Booking: {{place.name}}</h3>
+        <form class="service-form center-flex flex-column mt-10" action="{% url 'book_confirm' %}" method="post">
+            {% csrf_token %}
+            <label for="service_id">Select a service:</label>
+            <select id="service_id" name="service_id">
+                {% for service in services %}
+                    <option value="{{service.id}}">{{service.name}}({{service.price}})</option>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="place_id" value="{{place_id}}">
+            <br>
+            <button class="mt-20 button" type="submit">Book Car Wash</button>
+        </form>
+    </div>
+{% endblock main %}
+

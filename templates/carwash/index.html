@@ -1,0 +1,72 @@
+{% extends 'base/index.html' %}
+
+{% block main %}
+
+    <div class="center-flex flex-column mt-40">
+        {% if request.user.is_authenticated %}
+        <h2>Hello <span class="username">{{request.user}}</span>, welcome to CarWash.</h2>
+        {% else %}
+        <h3>Please <a href="{% url 'login' %}">Login</a> to see your bookings.</h3>
+        {% endif %}
+        <a class="mt-20" href="{% url 'search' %}?all=1 ">View All Places</a>
+    </div>
+
+    {% if bookings  %}
+        <div class="booking-list center-flex flex-column">
+            <h3>Status of you bookings</h3>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Booking Date</th>
+                        <th>CarWash Place</th>
+                        <th>Service</th>
+                        <th>Service Cost</th>
+                        <th>Booking Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                        <tr>
+                            <td>{{booking.date}}</td>
+                            <td>{{booking.carwash.name}}</td>
+                            <td>{{booking.service.name}}</td>
+                            <td>{{booking.service.price}}</td>
+                            <td>{{booking.status.status}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+    {% if places %}
+        <div class="booking-list center-flex flex-column">
+            <h3>List of places: {% if search  %} {{search}}{% else %}All{% endif %}</h3>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Slots Available (today)</th>
+                        <th>CarWash Place</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in places %}
+                        <tr>
+                            <td>{{p.id}}</td>
+                            <td>{{p.slots }}</td>
+                            <td>{{p.name}}</td>
+                            <td><a href="{% url 'book_car_wash' p.id %}" class="{% if p.slots <= 0 %}not-active{% endif %}">Book</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+
+{% endblock main %}
+

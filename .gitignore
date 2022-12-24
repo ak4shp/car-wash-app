@@ -1,0 +1,9 @@
+.env
+setenv.bat
+setenv.sh
+
+**/__pycache__
+
+_dev/
+
+# public/

@@ -1,0 +1,23 @@
+{% extends 'base/index.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+    <div class="center-flex flex-column">
+        <div>
+            {% if messages %}
+                {% for message in messages %}
+                <small>{{message}}</small>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <form method="POST" class="register-form ">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button class="center-flex" type="submit">Register</button>
+        </form>
+        <p class="mt-40">
+            Already have an account ? <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+
+{% endblock main %}
