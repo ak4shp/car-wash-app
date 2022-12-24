@@ -1,6 +1,5 @@
 .env
-setenv.bat
-setenv.sh
+
 
 **/__pycache__
 
