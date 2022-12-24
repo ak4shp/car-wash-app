@@ -1,2 +1,2 @@
-admin
-Adm1n
+username: admin
+password: Adm1n 
